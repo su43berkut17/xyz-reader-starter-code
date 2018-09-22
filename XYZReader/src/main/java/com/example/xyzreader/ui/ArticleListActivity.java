@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.RecyclerView;
@@ -48,6 +49,7 @@ public class ArticleListActivity extends ActionBarActivity implements
     private static final String TAG = ArticleListActivity.class.toString();
     private Toolbar mToolbar;
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    private NestedScrollView mNestedScrollView;
     private RecyclerView mRecyclerView;
     private CoordinatorLayout mCoordinatorLayout;
 
@@ -68,7 +70,8 @@ public class ArticleListActivity extends ActionBarActivity implements
 
         final View toolbarContainerView = findViewById(R.id.toolbar_container);
 
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+        //mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+        mNestedScrollView = (NestedScrollView) findViewById(R.id.swipe_refresh_layout);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
@@ -112,7 +115,8 @@ public class ArticleListActivity extends ActionBarActivity implements
     };
 
     private void updateRefreshingUI() {
-        mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
+        //mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
+
         /*if (mIsRefreshing==false) {
             showSnackBar("It is not refreshing");
         }*/

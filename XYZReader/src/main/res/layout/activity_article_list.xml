@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:id="@+id/coordinator_layout_main_activity">
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <android.support.v4.widget.NestedScrollView
         android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,9 +19,9 @@
             android:paddingRight="@dimen/list_side_margin"
             android:paddingTop="68dp"
             android:scrollbarStyle="outsideOverlay" />
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </android.support.v4.widget.NestedScrollView>
 
-    <FrameLayout
+    <android.support.design.widget.AppBarLayout
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
         android:layout_height="64dp"
@@ -35,15 +35,16 @@
             android:layout_gravity="bottom"
             android:layout_marginLeft="@dimen/list_toolbar_side_margin"
             android:layout_marginRight="@dimen/list_toolbar_side_margin"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            app:layout_scrollFlags="scroll|enterAlways">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo"
+                app:layout_scrollFlags="scroll|enterAlways"/>
 
         </android.support.v7.widget.Toolbar>
-    </FrameLayout>
+    </android.support.design.widget.AppBarLayout>
 
 </android.support.design.widget.CoordinatorLayout>
